@@ -31,6 +31,8 @@
             buttonCreateAppDataFolder = new Button();
             buttonCreateATxtFile = new Button();
             buttonReadATxtFile = new Button();
+            textboxExePath = new TextBox();
+            buttonSubmitExePath = new Button();
             SuspendLayout();
             // 
             // buttonCreateAppDataFolder
@@ -63,17 +65,38 @@
             buttonReadATxtFile.UseVisualStyleBackColor = true;
             buttonReadATxtFile.Click += buttonReadATxtFile_Click;
             // 
+            // textboxExePath
+            // 
+            textboxExePath.Location = new Point(12, 100);
+            textboxExePath.Name = "textboxExePath";
+            textboxExePath.PlaceholderText = "Enter the path to an \"exe\" file.";
+            textboxExePath.Size = new Size(273, 23);
+            textboxExePath.TabIndex = 3;
+            // 
+            // buttonSubmitExePath
+            // 
+            buttonSubmitExePath.Location = new Point(291, 100);
+            buttonSubmitExePath.Name = "buttonSubmitExePath";
+            buttonSubmitExePath.Size = new Size(162, 23);
+            buttonSubmitExePath.TabIndex = 4;
+            buttonSubmitExePath.Text = "Load application version";
+            buttonSubmitExePath.UseVisualStyleBackColor = true;
+            buttonSubmitExePath.Click += buttonSubmitExePath_Click;
+            // 
             // ControlDemo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonSubmitExePath);
+            Controls.Add(textboxExePath);
             Controls.Add(buttonReadATxtFile);
             Controls.Add(buttonCreateATxtFile);
             Controls.Add(buttonCreateAppDataFolder);
             Name = "ControlDemo";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -81,5 +104,7 @@
         private Button buttonCreateAppDataFolder;
         private Button buttonCreateATxtFile;
         private Button buttonReadATxtFile;
+        private TextBox textboxExePath;
+        private Button buttonSubmitExePath;
     }
 }
