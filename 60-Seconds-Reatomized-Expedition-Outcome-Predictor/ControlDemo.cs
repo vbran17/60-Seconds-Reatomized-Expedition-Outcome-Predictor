@@ -65,5 +65,11 @@ namespace _60_Seconds_Reatomized_Expedition_Outcome_Predictor
             // TODO: Read a .txt file
             // TODO: Show the contents of the txt file in a message box
         }
+
+        private void buttonSubmitExePath_Click(object sender, EventArgs e)
+        {
+            string userInput = this.textboxExePath.Text;
+            // TODO: Load app version
+        }
     }
 }
