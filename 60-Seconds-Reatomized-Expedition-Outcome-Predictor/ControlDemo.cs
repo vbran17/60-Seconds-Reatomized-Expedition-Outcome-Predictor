@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace _60_Seconds_Reatomized_Expedition_Outcome_Predictor
 {
