@@ -72,7 +72,7 @@
             Controls.Add(buttonCreateATxtFile);
             Controls.Add(buttonCreateAppDataFolder);
             Name = "ControlDemo";
-            Text = "Form1";
+            Text = "60_Seconds_Reatomized_Expedition_Outcome_Predictor";
             ResumeLayout(false);
         }
 
