@@ -1,5 +1,10 @@
+using System;
+using System.IO;
+using System.Diagnostics;
+
 namespace _60_Seconds_Reatomized_Expedition_Outcome_Predictor
 {
+
     public partial class ControlDemo : Form
     {
         public ControlDemo()
@@ -28,6 +33,28 @@ namespace _60_Seconds_Reatomized_Expedition_Outcome_Predictor
         {
             string userInput = this.textboxExePath.Text;
             // TODO: Load app version
+            if (string.IsNullOrWhiteSpace(userInput) || !userInput.EndsWith(".exe"))
+            {
+                MessageBox.Show("Please enter a valid path to an exe file.", "60_Seconds_Reatomized_Expedition_Outcome_Predictor");
+                return;
+            }
+
+            if (!File.Exists(userInput))
+            {
+                MessageBox.Show("The specified file does not exist.", "60_Seconds_Reatomized_Expedition_Outcome_Predictor");
+                return;
+            }
+            
+            try
+            {
+                var versioninfo = FileVersionInfo.GetVersionInfo(userInput);
+                string version = versioninfo.FileVersion ?? "Version information not available.";
+                MessageBox.Show(version, "File Version");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error");
+            }
         }
     }
 }
