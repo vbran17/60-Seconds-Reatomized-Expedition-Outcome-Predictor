@@ -41,19 +41,12 @@ namespace _60_Seconds_Reatomized_Expedition_Outcome_Predictor
 
             try
             {
-                if (!File.Exists(path))
+                using (StreamWriter sw = new StreamWriter(path, false))
                 {
-                    using (StreamWriter sw = File.CreateText(path))
-                    {
-                        sw.WriteLine(":D:D:D:D:D:D:D:D:D");
-                        sw.WriteLine("https://www.youtube.com/watch?v=DXMyt8sZx9w");
-                    }
-                    MessageBox.Show("The file was created successfully.", "60_Seconds_Reatomized_Expedition_Outcome_Predictor");
+                    sw.WriteLine(":D:D:D:D:D:D:D:D:Dtest");
+                    sw.WriteLine("https://www.youtube.com/watch?v=DXMyt8sZx9w");
                 }
-                else
-                {
-                    MessageBox.Show("There was already a file written with that path. This file has been overwritten.", "60_Seconds_Reatomized_Expedition_Outcome_Predictor");
-                }
+                MessageBox.Show("The file was created or overwritten successfully.", "60_Seconds_Reatomized_Expedition_Outcome_Predictor");
             }
             catch (Exception ex)
             {
